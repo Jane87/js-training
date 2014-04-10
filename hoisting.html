@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+
+<h1>Why is name &quot;undefined&quot; in the log output?</h1>
+
+<script type="text/javascript">
+    var name = 'John';
+
+    function doSomething() {
+        console.log(name);
+        var name = 'James';
+    }
+
+    doSomething();
+</script>
+
+</body>
+</html>
