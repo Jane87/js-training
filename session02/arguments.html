@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+
+<h1>
+    Implement the createObject() function such that the code does not end up throwing an exception
+    and all log statements show &quot;true&quot;. (Explicit usage of firstname, surname and dateOfBirth is NOT allowed!)
+</h1>
+
+<h2>Hint: You can use the arguments array-like object that is available in every function's local scope.</h2>
+
+<script type="text/javascript">
+    function createObject() {
+        // Create object without naming firstname, surname and dateOfBirth explicitly!
+    }
+
+    var obj = createObject('firstname', 'surname', 'dateOfBirth');
+    obj.assignValues('Tom', 'Tailor', '1979-07-19');
+
+    console.log('firstname property should have the right value:', obj.firstname === 'Tom');
+    console.log('surname property should have the right value:', obj.surname === 'Tailor');
+    console.log('dateOfBirth property should have the right value:', obj.dateOfBirth === '1979-07-19');
+</script>
+
+</body>
+</html>
