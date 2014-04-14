@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+
+<h1>Implement the createByteFormatter() function such that it satisfies the stated requirements. Use closures.</h1>
+
+<h1>Which function is the closure in your solution? Which variable does it enclose?</h1>
+
+<script type="text/javascript">
+    function createByteFormatter(divisor) {
+        // implement it!
+    }
+
+    var inKbytes = createByteFormatter(1024);
+    var inMbytes = createByteFormatter(1024 * 1024);
+    var inGbytes = createByteFormatter(1024 * 1024 * 1024);
+
+    var bytes = 364736289;
+
+    console.log(bytes + ' bytes are ' + inKbytes(bytes) + ' Kbytes.');
+    console.log(bytes + ' bytes are ' + inMbytes(bytes) + ' Mbytes.');
+    console.log(bytes + ' bytes are ' + inGbytes(bytes) + ' Gbytes.');
+</script>
+
+</body>
+</html>
