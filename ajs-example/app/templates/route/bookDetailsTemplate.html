@@ -1,0 +1,8 @@
+<h1 ng-bind="book.title"></h1>
+<h2 ng-bind="book.subtitle"></h2>
+<ul>
+    <li ng-bind-template="Author: {{book.author}}"></li>
+    <li ng-bind-template="Number of pages: {{ book.numPages }}"></li>
+    <li ng-bind-template="ISBN: {{ book.isbn }}"></li>
+</ul>
+<p><a ng-click="goToListView()">Go back to list view</a></p>
