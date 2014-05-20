@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp').factory('bookDataService', function() {
+angular.module('myApp').factory('bookDataService', function($q) {
 
   var books = [
     {
@@ -27,7 +27,9 @@ angular.module('myApp').factory('bookDataService', function() {
   ];
 
   function getAllBooks() {
-    return angular.copy(books);
+    return $q.when({
+      data: angular.copy(books)
+    });
   }
 
   function getBookByIsbn(isbn) {
@@ -35,7 +37,15 @@ angular.module('myApp').factory('bookDataService', function() {
       return b.isbn == isbn;
     });
 
-    return filtered[0];
+    return $q.when({
+      data: filtered[0]
+    });
+  }
+
+  function saveBook(book) {
+    books.push(book);
+
+    return $q.when(books.length);
   }
 
   return {
@@ -44,6 +54,9 @@ angular.module('myApp').factory('bookDataService', function() {
     },
     getBookByIsbn: function(isbn) {
       return getBookByIsbn(isbn);
+    },
+    saveBook: function(book) {
+      return saveBook(book);
     }
   };
 

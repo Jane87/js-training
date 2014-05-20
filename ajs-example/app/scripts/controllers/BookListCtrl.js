@@ -1,5 +1,7 @@
 'use strict';
 
 angular.module('myApp').controller('BookListCtrl', function($scope, bookDataService) {
-  $scope.books = bookDataService.getAllBooks();
+  bookDataService.getAllBooks().then(function(response) {
+    $scope.books = response.data;
+  });
 });
